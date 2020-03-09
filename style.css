@@ -70,12 +70,26 @@ button {
     border: 0;
 }
 
+
+
+
 .table_container {
     overflow-y: scroll;
 }
 
 table {
     width: 200%;
+}
+
+@media(min-width:768px) {
+    .table_container {
+        overflow-y: auto;
+    }
+
+    table {
+        width: 100%;
+    }
+
 }
 
 th,
