@@ -11,20 +11,46 @@
 body {
     font-family: 'Gotham', sans-serif;
     background: #ddd;
-    font-size: 160%;
-    padding: 0 30px;
+    font-size: 120%;
+    padding: 0 20px;
     font-weight: lighter;
 }
 
-h1 {
-    padding: 0 0 30px;
+
+@media(min-width:768px) {
+    body {
+        font-size: 150%;
+        padding: 0 30px;
+    }
 }
 
-div {
-    padding: 30px;
-    background: white;
+h1 {
+    padding: 10px;
+    margin: 0 0 10px;
+    position: sticky;
+    top: 20px;
+    font-size: 1.5em;
+    background-color: white;
+}
 
-    margin: 30px auto;
+@media(min-width:768px) {
+    h1 {
+        font-size: 2em;
+    }
+}
+
+main {
+    padding: 20px;
+    background: white;
+    position: relative;
+    margin: 20px auto;
+}
+
+@media(min-width:768px) {
+    main {
+        padding: 30px;
+        margin: 30px auto;
+    }
 }
 
 input {
@@ -44,8 +70,12 @@ button {
     border: 0;
 }
 
+.table_container {
+    overflow-y: scroll;
+}
+
 table {
-    width: 100%;
+    width: 200%;
 }
 
 th,
@@ -53,6 +83,7 @@ td {
     text-align: left;
     padding: 5px 10px;
     width: 20%;
+    font-size: 0.9em;
 }
 
 th {

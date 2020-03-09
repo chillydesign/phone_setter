@@ -23,10 +23,10 @@ $current_phone = current_phone()
 </head>
 
 <body>
-    <div>
+    <main>
         <h1>Calling: <?php echo $current_phone; ?></h1>
      
-
+        <div class="table_container">
 <table>
     <thead>
         <tr>
@@ -51,9 +51,11 @@ $current_phone = current_phone()
     </tbody>
 
 </table>
+    </div>
 
    
         <form action="client_create.php" method="post">
+            <div class="table_container">
         <table class="new_phone">
         <tbody>
         <tr>
@@ -64,26 +66,21 @@ $current_phone = current_phone()
            <td> <button name="directory_submit" id="directory_submit" type="submit">Add to directory </button></td>
         </tr></tbody>
         </table>
-       
+        </div>
         </form>
 
 
 
 
-    </div>
+    </main>
 
     <script>
 
-
-
-        const getPhoneNumber = fetch('https://webfactor.ch/phone/phone.txt')
-            .then((r) => r.text())
-            .then(body => {
-
-                console.log(body)
-
-            });
-
+        // const getPhoneNumber = fetch('https://webfactor.ch/phone/phone.txt')
+        //     .then((r) => r.text())
+        //     .then(body => {
+        //         console.log(body)
+        //     });
 
     </script>
 
