@@ -39,8 +39,8 @@ $current_phone = current_phone()
     </thead>
     <tbody>
     <?php foreach($clients as $client) : ?>
-        
-        <tr>
+        <?php $selected = ($client->phone == $current_phone) ? 'class="selected"' : '' ; ?>
+        <tr <?php echo $selected; ?>>
         <td><?php echo $client->phone; ?></td>
         <td><?php echo $client->first_name; ?></td>
         <td><?php echo $client->last_name; ?></td>

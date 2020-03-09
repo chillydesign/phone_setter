@@ -11,7 +11,9 @@
 body {
     font-family: 'Gotham', sans-serif;
     background: #ddd;
-    font-size: 80%;
+    font-size: 160%;
+    padding: 0 30px;
+    font-weight: lighter;
 }
 
 h1 {
@@ -21,7 +23,7 @@ h1 {
 div {
     padding: 30px;
     background: white;
-    max-width: 700px;
+
     margin: 30px auto;
 }
 
@@ -64,4 +66,8 @@ tr:nth-child(2n) td {
 
 .new_phone td {
     background: #aaa;
+}
+
+tr.selected td {
+    background: #99f;
 }
