@@ -45,7 +45,12 @@ $current_phone = current_phone()
         <td><?php echo $client->first_name; ?></td>
         <td><?php echo $client->last_name; ?></td>
         <td><?php echo $client->company_name; ?></td>
-        <td><form action="assign_number.php" method="post"><input type="hidden" name="phone" value="<?php echo $client->phone; ?>" /><button name="submit" type="submit">Call</button></form></td>
+        <td>
+        <div class="button_container">
+        <a href="assign_number.php?phone=<?php echo $client->phone; ?>" class="button">Call</a>
+        <a href="client_delete.php?id=<?php echo $client->id; ?>" class="delete">x</a>
+        </div>
+        </td>
         </tr>
         <?php endforeach; ?>
     </tbody>

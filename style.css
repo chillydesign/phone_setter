@@ -61,13 +61,17 @@ input {
     font-size: 1em;
 }
 
-button {
+button,
+a.button {
     background: #222;
     color: white;
     padding: 5px;
     font-size: 1em;
     width: 100%;
     border: 0;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
 
@@ -97,6 +101,7 @@ td {
     text-align: left;
     padding: 5px 10px;
     width: 20%;
+    font-weight: lighter;
     font-size: 0.9em;
 }
 
@@ -115,4 +120,28 @@ tr:nth-child(2n) td {
 
 tr.selected td {
     background: #99f;
+}
+
+
+.button_container {
+    display: flex;
+}
+
+.button_container a {
+    flex: 1 auto;
+    margin: 0 2px 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+
+.delete {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background: #f32;
+
+    text-decoration: none;
+    display: inline-block;
 }

@@ -115,6 +115,32 @@ function create_client($client) {
 
 
 
+function delete_client($client_id) {
+
+    global $conn;
+    if ($client_id > 0) {
+
+        try {
+            $query = "DELETE FROM clients  WHERE id = :id    ";
+            $client_query = $conn->prepare($query);
+            $client_query->bindParam(':id', $client_id);
+            $client_query->setFetchMode(PDO::FETCH_OBJ);
+            $client_query->execute();
+
+            unset($conn);
+            return true;
+
+
+        } catch(PDOException $err) {
+            return false;
+        };
+    } else {
+        return false;
+    }
+
+}
+
+
 function processClient($client) {
 
     $client->name =  $client->first_name . ' '  . $client->last_name ;

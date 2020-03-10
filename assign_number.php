@@ -8,8 +8,8 @@ include('functions.php');
 
 // SET PHONE NUMBER IN TEXT FILE FOR TWILIO TO USE
 
-if (isset($_POST['submit'])):
-    $phone = $_POST['phone']; 
+if (isset($_GET['phone'])):
+    $phone = $_GET['phone']; 
     if ($phone != '') {
         $myfile = fopen("phone.txt", "w") or die("Unable to open file!");
         fwrite($myfile, $phone);
@@ -19,6 +19,8 @@ if (isset($_POST['submit'])):
     } else {
         header('Location: index.php?error=didntassign');
     }
+else:
+    header('Location: index.php?error=nonumber');
 endif;
 
 
