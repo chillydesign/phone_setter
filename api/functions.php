@@ -1,17 +1,23 @@
 <?php
 
 
-
+function assign_phone_number($number) {
+ 
+    $f = FILELOC . "/phone.txt";
+    $myfile = fopen($f, "w") or die("Unable to open file!");
+    fwrite($myfile, $number);
+    fclose($myfile);
+}
 
 
 function current_phone() {
     $current_phone =  '-';
-$read_phone = fopen("phone.txt", "r") or die("Unable to open phone file!");
-$current_phone =  fread($read_phone,filesize("phone.txt"));
-fclose($read_phone);
-// SET PHONE NUMBER IN TEXT FILE FOR TWILIO TO USE
-
-return $current_phone;
+    $f = FILELOC . "/phone.txt";
+    $read_phone = fopen($f, "r") or die("Unable to open phone file!");
+    $current_phone =  fread($read_phone,filesize($f));
+    fclose($read_phone);
+    // SET PHONE NUMBER IN TEXT FILE FOR TWILIO TO USE
+    return $current_phone;
 }
 
 
@@ -144,7 +150,7 @@ function delete_client($client_id) {
 function processClient($client) {
 
     $client->name =  $client->first_name . ' '  . $client->last_name ;
-
+    $client->id = intval($client->id);
     return $client;
 }
 

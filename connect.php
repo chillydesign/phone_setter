@@ -13,6 +13,7 @@ define("DB_USER",  getenv('DB_USER') );
 define("DB_PASSWORD",  getenv('DB_PASSWORD') );
 
 
+define("FILELOC", dirname(__FILE__) );
 
 try {
 

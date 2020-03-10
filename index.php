@@ -1,10 +1,10 @@
 <?php
 
 include('connect.php');
-include('functions.php');
+include('api/functions.php');
 
-$clients = get_clients();
-$current_phone = current_phone()
+$clients = []; //get_clients();
+// $current_phone = current_phone();
 
 
 ?>
@@ -24,7 +24,7 @@ $current_phone = current_phone()
 
 <body>
     <main>
-        <h1>Calling: <?php echo $current_phone; ?></h1>
+        <h1>Calling:  <span id="current_phone"></span></h1>
      
         <div class="table_container">
 <table>
@@ -37,7 +37,9 @@ $current_phone = current_phone()
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="clienttbody">
+
+
     <?php foreach($clients as $client) : ?>
         <?php $selected = ($client->phone == $current_phone) ? 'class="selected"' : '' ; ?>
         <tr <?php echo $selected; ?>>
@@ -47,7 +49,7 @@ $current_phone = current_phone()
         <td><?php echo $client->company_name; ?></td>
         <td>
         <div class="button_container">
-        <a href="assign_number.php?phone=<?php echo $client->phone; ?>" class="button">Call</a>
+        <a href="assign_number.php?phone=<?php echo $client->phone; ?>"  data-number="<?php echo $client->phone;?>"   class="call_button button">Call</a>
         <a href="client_delete.php?id=<?php echo $client->id; ?>" class="delete">x</a>
         </div>
         </td>
@@ -88,6 +90,8 @@ $current_phone = current_phone()
         //     });
 
     </script>
+
+    <script src="scripts.js"></script>
 
 </body>
 

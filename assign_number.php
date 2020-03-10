@@ -1,7 +1,7 @@
 <?php
 
 include('connect.php');
-include('functions.php');
+include('api/functions.php');
 
 
 
@@ -11,9 +11,9 @@ include('functions.php');
 if (isset($_GET['phone'])):
     $phone = $_GET['phone']; 
     if ($phone != '') {
-        $myfile = fopen("phone.txt", "w") or die("Unable to open file!");
-        fwrite($myfile, $phone);
-        fclose($myfile);
+
+        assign_phone_number($phone);
+       
 
         header('Location: index.php?success');
     } else {

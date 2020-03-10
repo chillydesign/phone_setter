@@ -1,8 +1,6 @@
 <?php
-
 include('connect.php');
-include('functions.php');
-
+include('api/functions.php');
 
 
 if (!empty($_GET['id'])) {

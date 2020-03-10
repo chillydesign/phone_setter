@@ -1,8 +1,7 @@
 <?php
 
 include('connect.php');
-include('functions.php');
-
+include('api/functions.php');
 
 
 
@@ -20,6 +19,8 @@ if (!empty($_POST)) {
     if ($client_id) {
         
         $client = get_client($client_id);
+
+        assign_phone_number($c->phone);
       
   
         header('Location: index.php?success');
