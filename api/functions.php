@@ -2,7 +2,7 @@
 
 
 function assign_phone_number($number) {
- 
+
     $f = FILELOC . "/phone.txt";
     $myfile = fopen($f, "w") or die("Unable to open file!");
     fwrite($myfile, $number);
@@ -14,7 +14,7 @@ function current_phone() {
     $current_phone =  '-';
     $f = FILELOC . "/phone.txt";
     $read_phone = fopen($f, "r") or die("Unable to open phone file!");
-    $current_phone =  fread($read_phone,filesize($f));
+    $current_phone =  fread($read_phone, filesize($f));
     fclose($read_phone);
     // SET PHONE NUMBER IN TEXT FILE FOR TWILIO TO USE
     return $current_phone;
@@ -22,7 +22,7 @@ function current_phone() {
 
 
 
-function get_clients(){
+function get_clients() {
     global $conn;
 
 
@@ -44,8 +44,7 @@ function get_clients(){
 
         unset($conn);
         return $clients;
-
-    } catch(PDOException $err) {
+    } catch (PDOException $err) {
         return [];
     };
 }
@@ -54,7 +53,7 @@ function get_clients(){
 function get_client($client_id = null) {
 
     global $conn;
-    if ( $client_id != null) {
+    if ($client_id != null) {
 
 
         try {
@@ -75,7 +74,7 @@ function get_client($client_id = null) {
 
             unset($conn);
             return $client;
-        } catch(PDOException $err) {
+        } catch (PDOException $err) {
             return null;
         };
     } else { // if client id is not greated than 0
@@ -88,9 +87,9 @@ function get_client($client_id = null) {
 
 function create_client($client) {
     global $conn;
-    if ( !empty($client->last_name)  && !empty($client->phone)  ){
+    if (!empty($client->last_name)  && !empty($client->phone)) {
 
-  
+
         try {
             $query = "INSERT INTO clients
              (first_name, last_name, phone, company_name) VALUES 
@@ -104,18 +103,13 @@ function create_client($client) {
             $client_id = $conn->lastInsertId();
             unset($conn);
             return ($client_id);
-
-        } catch(PDOException $err) {
+        } catch (PDOException $err) {
 
             return false;
-
         };
-
     } else { // client client_id was blank
         return false;
     }
-
-
 }
 
 
@@ -135,30 +129,27 @@ function delete_client($client_id) {
 
             unset($conn);
             return true;
-
-
-        } catch(PDOException $err) {
+        } catch (PDOException $err) {
             return false;
         };
     } else {
         return false;
     }
-
 }
 
 
 function processClient($client) {
 
-    $client->name =  $client->first_name . ' '  . $client->last_name ;
+    $client->name =  $client->first_name . ' '  . $client->last_name;
     $client->id = intval($client->id);
     return $client;
 }
 
 
 function processClients($clients) {
-    
+
     foreach ($clients as $client) {
-       processClient($client);
+        processClient($client);
     }
 
     return $clients;
@@ -179,7 +170,7 @@ function processClients($clients) {
 //         // Write the contents back to the file
 //         file_put_contents($directoryfile, $current);
 
-    
+
 //     }
 // endif;
 
@@ -201,10 +192,19 @@ function processClients($clients) {
 
 
 function assign_text($data) {
- 
+
     $f = FILELOC . "/text_code.txt";
     $myfile = fopen($f, "w") or die("Unable to open text_code!");
     $d = implode("", $data);
-    fwrite($myfile, $d);
+
+    $str = '';
+    foreach ($data as $key => $value) {
+        $str .= 'key:';
+        $str .= $key;
+        $str .= '. value:';
+        $str .= $value;
+        $str .= '////';
+    }
+    fwrite($myfile, $str);
     fclose($myfile);
 }
