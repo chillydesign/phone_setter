@@ -14,18 +14,30 @@ include('api/functions.php');
     <title>Text Code</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        body {
+
+            font-family: monospace;
+        }
+
+        main {
+            max-width: 400px;
+            text-align: center;
+        }
+
         #text_code {
             display: none;
             padding: 30px;
             background-color: #f4f4f2;
-            margin: 50px auto 0;
-            font-family: monospace;
+            margin: auto 0;
+            font-size: 2em;
         }
 
         #text_date {
             display: none;
-            padding: 10px;
+            padding: 10px 30px;
             background-color: #e7e7ea;
+            font-size: 0.8em;
+            color: #555;
         }
     </style>
 </head>
