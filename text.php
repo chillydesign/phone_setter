@@ -19,6 +19,7 @@ include('api/functions.php');
             padding: 30px;
             background-color: #f4f4f2;
             margin: 50px auto;
+            font-family: monospace;
         }
     </style>
 </head>

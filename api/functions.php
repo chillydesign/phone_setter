@@ -196,11 +196,20 @@ function assign_text($data) {
     $f = FILELOC . "/text_code.txt";
     $myfile = fopen($f, "w") or die("Unable to open text_code!");
 
+
+
     $lines = array();
     foreach ($data as $key => $value) {
         $str = '"' . $key . '":' .  '"' .  $value . '"';
         array_push($lines, $str);
     }
+
+    $date = date_create();
+    $nice_date =  date_format($date, 'Y-m-d H:i:s');
+    $nice_date_json = '"date":"' .   $nice_date . '"';
+    array_push($lines, $nice_date_json);
+
+
     $str =   '{' . implode(',', $lines) . '}';
     fwrite($myfile, $str);
     fclose($myfile);
