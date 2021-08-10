@@ -195,16 +195,13 @@ function assign_text($data) {
 
     $f = FILELOC . "/text_code.txt";
     $myfile = fopen($f, "w") or die("Unable to open text_code!");
-    $d = implode("", $data);
 
-    $str = '';
+    $lines = array();
     foreach ($data as $key => $value) {
-        $str .= 'key:';
-        $str .= $key;
-        $str .= '. value:';
-        $str .= $value;
-        $str .= '////';
+        $str = '"' . $key . '":' .  '"' .  $value . '"';
+        array_push($lines, $str);
     }
+    $str =   '{' . implode(',', $lines) . '}';
     fwrite($myfile, $str);
     fclose($myfile);
 }
