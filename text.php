@@ -60,9 +60,11 @@ include('api/functions.php');
                 el_text.innerHTML = json.Body;
                 el_text.style.display = 'block';
 
-
                 const el_date = document.getElementById('text_date');
-                el_date.innerHTML = json.date;
+                const d = new Date(json.unix_time * 1000);
+                const json_date = d.toLocaleDateString() + ' ' + d.toLocaleTimeString();
+                // const json_date = json.date;
+                el_date.innerHTML = json_date;
                 el_date.style.display = 'block';
             });
     </script>
