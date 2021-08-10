@@ -18,8 +18,14 @@ include('api/functions.php');
             display: none;
             padding: 30px;
             background-color: #f4f4f2;
-            margin: 50px auto;
+            margin: 50px auto 0;
             font-family: monospace;
+        }
+
+        #text_date {
+            display: none;
+            padding: 10px;
+            background-color: #e7e7ea;
         }
     </style>
 </head>
@@ -30,6 +36,7 @@ include('api/functions.php');
 
 
         <div id="text_code"></div>
+        <div id="text_date"></div>
 
     </main>
 
@@ -39,10 +46,14 @@ include('api/functions.php');
             .then(json => {
                 console.log(json)
 
-                const el = document.getElementById('text_code');
-                el.innerHTML = json.Body;
-                el.style.display = 'block';
+                const el_text = document.getElementById('text_code');
+                el_text.innerHTML = json.Body;
+                el_text.style.display = 'block';
 
+
+                const el_date = document.getElementById('text_date');
+                el_date.innerHTML = json.date;
+                el_date.style.display = 'block';
             });
     </script>
 
