@@ -44,8 +44,6 @@ include('api/functions.php');
 
 <body>
     <main>
-        <h1>Text code</h1>
-
 
         <div id="text_code"></div>
         <div id="text_date"></div>
