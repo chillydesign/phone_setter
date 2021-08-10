@@ -204,10 +204,16 @@ function assign_text($data) {
         array_push($lines, $str);
     }
 
+    $timeZone = 'UTC';
+    date_default_timezone_set($timeZone);
     $date = date_create();
     $nice_date =  date_format($date, 'Y-m-d H:i:s');
     $nice_date_json = '"date":"' .   $nice_date . '"';
     array_push($lines, $nice_date_json);
+
+    $unix_time =  time();
+    $unix_time_json = '"unix_time":"' .   $unix_time . '"';
+    array_push($lines, $unix_time_json);
 
 
     $str =   '{' . implode(',', $lines) . '}';
