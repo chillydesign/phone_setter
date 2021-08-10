@@ -14,7 +14,12 @@ include('api/functions.php');
     <title>Text Code</title>
     <link rel="stylesheet" href="style.css">
     <style>
-
+        #text_code {
+            display: none;
+            padding: 30px;
+            background-color: #f4f4f2;
+            margin: 50px auto;
+        }
     </style>
 </head>
 
@@ -23,6 +28,8 @@ include('api/functions.php');
         <h1>Text code</h1>
 
 
+        <div id="text_code"></div>
+
     </main>
 
     <script>
@@ -30,6 +37,11 @@ include('api/functions.php');
             .then((r) => r.json())
             .then(json => {
                 console.log(json)
+
+                const el = document.getElementById('text_code');
+                el.innerHTML = json.Body;
+                el.style.display = 'block';
+
             });
     </script>
 
