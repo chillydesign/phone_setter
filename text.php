@@ -51,7 +51,11 @@ include('api/functions.php');
     </main>
 
     <script>
-        const getPhoneNumber = fetch('https://webfactor.ch/phone/text_code.txt')
+        const getPhoneNumber = fetch(
+                'https://webfactor.ch/phone/text_code.txt', {
+                    cache: "no-store"
+                }
+            )
             .then((r) => r.json())
             .then(json => {
                 console.log(json)
