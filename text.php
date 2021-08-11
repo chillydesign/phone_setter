@@ -51,26 +51,31 @@ include('api/functions.php');
     </main>
 
     <script>
-        const getPhoneNumber = fetch(
-                'https://webfactor.ch/phone/get_text_code.php', {
-                    cache: "no-store"
-                }
-            )
-            .then((r) => r.json())
-            .then(json => {
-                console.log(json)
+        const el_text = document.getElementById('text_code');
+        const el_date = document.getElementById('text_date');
 
-                const el_text = document.getElementById('text_code');
-                el_text.innerHTML = json.Body;
-                el_text.style.display = 'block';
 
-                const el_date = document.getElementById('text_date');
-                const d = new Date(json.unix_time * 1000);
-                const json_date = d.toLocaleDateString() + ' ' + d.toLocaleTimeString();
-                // const json_date = json.date;
-                el_date.innerHTML = json_date;
-                el_date.style.display = 'block';
-            });
+        setInterval(getNumber, 3000);
+
+
+        function getNumber() {
+            const getPhoneNumber = fetch(
+                    'https://webfactor.ch/phone/get_text_code.php', {
+                        cache: "no-store"
+                    }
+                )
+                .then((r) => r.json())
+                .then(json => {
+                    console.log(json);
+                    el_text.innerHTML = json.Body;
+                    el_text.style.display = 'block';
+                    const d = new Date(json.unix_time * 1000);
+                    const json_date = d.toLocaleDateString() + ' ' + d.toLocaleTimeString();
+                    // const json_date = json.date;
+                    el_date.innerHTML = json_date;
+                    el_date.style.display = 'block';
+                });
+        }
     </script>
 
 
