@@ -191,6 +191,14 @@ function processClients($clients) {
 // // READ LIST OF PHONE NUMBERS SAVED IN TEXT FILE
 
 
+function get_text_contents() {
+    $f = FILELOC . "/text_code.txt";
+    $myfile = fopen($f, "r") or die("Unable to open text_code!");
+    $te =  fread($myfile, filesize($f));
+    fclose($myfile);
+    return $te;
+}
+
 function assign_text($data) {
 
     $f = FILELOC . "/text_code.txt";

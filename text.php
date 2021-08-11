@@ -52,7 +52,7 @@ include('api/functions.php');
 
     <script>
         const getPhoneNumber = fetch(
-                'https://webfactor.ch/phone/text_code.txt', {
+                'https://webfactor.ch/phone/get_text_code.php', {
                     cache: "no-store"
                 }
             )
