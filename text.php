@@ -54,8 +54,8 @@ include('api/functions.php');
         const el_text = document.getElementById('text_code');
         const el_date = document.getElementById('text_date');
 
-
-        setInterval(getNumber, 3000);
+        getNumber();
+        setInterval(getNumber, 5000);
 
 
         function getNumber() {
@@ -66,7 +66,7 @@ include('api/functions.php');
                 )
                 .then((r) => r.json())
                 .then(json => {
-                    console.log(json);
+                    // console.log(json);
                     el_text.innerHTML = json.Body;
                     el_text.style.display = 'block';
                     const d = new Date(json.unix_time * 1000);
