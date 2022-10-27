@@ -1,149 +1,146 @@
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
+::selection {
+  background: #8a88d4; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #8a88d4; /* Gecko Browsers */
+}
 
 body {
-    font-family: 'Gotham', sans-serif;
-    background: #ddd;
-    font-size: 120%;
-    padding: 0 20px;
-    font-weight: lighter;
+  font-family: "Gotham", sans-serif;
+  background: #ddd;
+  font-size: 120%;
+  padding: 0 20px;
+  font-weight: lighter;
 }
 
-
-@media(min-width:768px) {
-    body {
-        font-size: 150%;
-        padding: 0 30px;
-    }
+@media (min-width: 768px) {
+  body {
+    font-size: 150%;
+    padding: 0 30px;
+  }
 }
 
 h1 {
-    padding: 10px;
-    margin: 0 0 10px;
-    position: sticky;
-    top: 20px;
-    font-size: 1.5em;
-    background-color: white;
+  padding: 10px;
+  margin: 0 0 10px;
+  position: sticky;
+  top: 20px;
+  font-size: 1.5em;
+  background-color: white;
 }
 
-@media(min-width:768px) {
-    h1 {
-        font-size: 2em;
-    }
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
 }
 
 main {
-    padding: 20px;
-    background: white;
-    position: relative;
-    margin: 20px auto;
+  padding: 20px;
+  background: white;
+  position: relative;
+  margin: 20px auto;
 }
 
-@media(min-width:768px) {
-    main {
-        padding: 30px;
-        margin: 30px auto;
-    }
+@media (min-width: 768px) {
+  main {
+    padding: 30px;
+    margin: 30px auto;
+  }
 }
 
 input {
-
-    padding: 5px;
-    width: 100%;
-    /* max-width:80px; */
-    font-size: 1em;
+  padding: 5px;
+  width: 100%;
+  /* max-width:80px; */
+  font-size: 1em;
 }
 
 button,
 a.button {
-    background: #222;
-    cursor: pointer;
-    color: white;
-    padding: 5px;
-    font-size: 1em;
-    width: 100%;
-    border: 0;
-    text-align: center;
-    border-radius: 5px;
-    text-decoration: none;
+  background: #222;
+  cursor: pointer;
+  color: white;
+  padding: 5px;
+  font-size: 1em;
+  width: 100%;
+  border: 0;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
-
-
-
 .table_container {
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 table {
-    width: 200%;
+  width: 200%;
 }
 
-@media(min-width:768px) {
-    .table_container {
-        overflow-y: auto;
-    }
+@media (min-width: 768px) {
+  .table_container {
+    overflow-y: auto;
+  }
 
-    table {
-        width: 100%;
-    }
-
+  table {
+    width: 100%;
+  }
 }
 
 th,
 td {
-    text-align: left;
-    padding: 5px 10px;
-    width: 20%;
-    font-weight: lighter;
-    font-size: 0.9em;
+  text-align: left;
+  padding: 5px 10px;
+  width: 20%;
+  font-weight: lighter;
+  font-size: 0.9em;
 }
 
 th {
-    background: #777;
-    color: white;
+  background: #777;
+  color: white;
 }
 
 tr:nth-child(2n) td {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
 
 .new_phone td {
-    background: #aaa;
+  background: #aaa;
 }
 
 tr.selected td {
-    background: #99f;
+  background: #99f;
 }
 
-
 .button_container {
-    display: flex;
+  display: flex;
 }
 
 .button_container a {
-    flex: 1 auto;
-    margin: 0 2px 5px 0;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
+  flex: 1 auto;
+  margin: 0 2px 5px 0;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-
-
 .delete {
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    background: #f32;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  background: #f32;
 
-    text-decoration: none;
-    display: inline-block;
+  text-decoration: none;
+  display: inline-block;
 }
