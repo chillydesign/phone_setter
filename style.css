@@ -9,7 +9,7 @@
 
 body {
   font-family: "Gotham", sans-serif;
-  /* background: #ddd; */
+  background: #ddd;
   font-size: 120%;
   padding: 0 20px;
   font-weight: lighter;
@@ -21,6 +21,8 @@ body {
     padding: 0 30px;
   }
 }
+
+/* 
 
 h1 {
   padding: 10px;
@@ -54,7 +56,6 @@ main {
 input {
   padding: 5px;
   width: 100%;
-  /* max-width:80px; */
   font-size: 1em;
 }
 
@@ -136,4 +137,4 @@ tr.selected td {
 
   text-decoration: none;
   display: inline-block;
-}
+} */
