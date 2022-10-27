@@ -7,12 +7,12 @@
   border: 0;
 }
 
-::selection {
+/* ::selection {
   background: #8a88d4; /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
   background: #8a88d4; /* Gecko Browsers */
-}
+} */
 
 body {
   font-family: "Gotham", sans-serif;
