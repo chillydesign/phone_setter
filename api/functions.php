@@ -87,7 +87,7 @@ function get_client($client_id = null) {
 
 function create_client($client) {
     global $conn;
-    if (!empty($client->last_name)  && !empty($client->phone)) {
+    if (!empty($client->phone)) {
 
 
         try {
