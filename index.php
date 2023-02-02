@@ -67,8 +67,8 @@ $clients = []; //get_clients();
                     <tbody>
                         <tr>
                             <td> <input required type="text" name="phone" id="phone" placeholder="Number" /></td>
-                            <td> <input required type="text" name="first_name" id="first_name" placeholder="First Name" /></td>
-                            <td> <input required type="text" name="last_name" id="last_name" placeholder="Last Name" /></td>
+                            <td> <input type="text" name="first_name" id="first_name" placeholder="First Name" /></td>
+                            <td> <input type="text" name="last_name" id="last_name" placeholder="Last Name" /></td>
                             <td> <input type="text" name="company_name" id="company_name" placeholder="Company" /></td>
                             <td> <button name="directory_submit" id="directory_submit" type="submit">Add to directory </button></td>
                         </tr>
